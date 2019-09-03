@@ -35,12 +35,12 @@ export default class LogIn extends Component {
           </div>
 
           <Link to="/useraccount">
-          <button type="submit" onClick={(true)?this.props.getUser.bind(
+          <button type="submit" onClick={this.props.getUser.bind(
                                 this,
                                 this.state.Name,
                                 this.state.Password,
                                 this.cleanInput
-                              ):}
+                              )}
                                className="btn btn-primary">LogIn</button>
           </Link>
           </div>
