@@ -4,6 +4,7 @@ import Home from './component/Home';
 import LogIn from './component/LogIn';
 import SignUp from './component/SignUp';
 import axios from 'axios';
+import UserAccount from './component/UserAccount';
 
 export default class App extends Component {
   state = {
@@ -28,6 +29,7 @@ export default class App extends Component {
     axios.get(`http://localhost:9000/user/${name}/${password}`)
     .then(response => {
       this.setState({ user: response.data });
+      console.log(response.data)
     });
     cleanInput()
   };
@@ -41,6 +43,7 @@ export default class App extends Component {
           <Route path='/' exact component={Home} /> 
           <Route path='/signup' component={() => <SignUp postUser={this.postUser} />} />
           <Route path='/login' component={() => <LogIn getUser={this.getUser} />} />
+          <Route path='/useraccount' component={() => <UserAccount  />} />
         </Router>
        
       </React.Fragment>
